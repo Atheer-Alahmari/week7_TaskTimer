@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Week7_TaskTimer">
         <activity
+            android:name=".TaskTimer"
+            android:exported="true" />
+        <activity
+            android:name=".ViewTask"
+            android:exported="true" />
+        <activity
             android:name=".AddTaskActivity"
             android:exported="true" />
         <activity
