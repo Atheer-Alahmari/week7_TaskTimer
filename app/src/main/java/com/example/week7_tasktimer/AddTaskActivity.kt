@@ -36,7 +36,8 @@ class AddTaskActivity : AppCompatActivity() {
 
             if (userEnterName.isNotEmpty() && userEnterDesc.isNotEmpty()) {
 
-                myDBRoom.Task_Dao().insertTask(Tasks(0, userEnterName, userEnterDesc))
+                myDBRoom.Task_Dao().insertTask(Tasks(0, userEnterName, userEnterDesc,0,""))
+
                 Toast.makeText(this, "Data Save Successfully!", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(applicationContext, "Please Enter All  ", Toast.LENGTH_SHORT).show()

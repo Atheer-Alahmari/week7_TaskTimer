@@ -26,18 +26,22 @@ class RV_Adapter (val activity: ViewTask, private val task1:List<Tasks>): Recycl
     }
 
     override fun onBindViewHolder(holder: ItemViewHolder, position: Int) {
-        val userId = task1[position].id
-        val name = task1[position].name
-        val description = task1[position].description
+        val taskId = task1[position].id
+        val taskName = task1[position].name
+        val taskDescription = task1[position].description
 
-
+var count=false
 
         holder.itemView.apply {
-            text_View.text = "$name \n $description"
+            text_View.text = "$taskName \n $taskDescription"
 
             text_View.setOnClickListener {
-                Toast.makeText(activity, "Data Save Successfully!", Toast.LENGTH_SHORT).show()
-
+                count=true
+                val intent = Intent(activity,TaskTimer::class.java)
+                intent.putExtra("TaskId",taskId)
+//                intent.putExtra("TaskName",taskName)
+//                intent.putExtra("TaskDescription",taskDescription)
+                    startActivity(activity,intent,Bundle())
             }
             // var myDBRoom= TaskDatabase.getInstance(activity)
 
